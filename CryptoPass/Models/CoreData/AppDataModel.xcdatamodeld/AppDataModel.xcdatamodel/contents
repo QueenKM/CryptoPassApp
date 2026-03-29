@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24D5034f" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Password" representedClassName="Password" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="encryptedPassword" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="serviceName" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="changeHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordChangeHistory" inverseName="password" inverseEntity="PasswordChangeHistory"/>
+    </entity>
+    <entity name="PasswordChangeHistory" representedClassName="PasswordChangeHistory" syncable="YES">
+        <attribute name="changeDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="newPassword" optional="YES" attributeType="String"/>
+        <attribute name="oldPassword" optional="YES" attributeType="String"/>
+        <attribute name="passwordID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="password" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Password" inverseName="changeHistory" inverseEntity="Password"/>
+    </entity>
+    <entity name="UserActivityLog" representedClassName="UserActivityLog" syncable="YES">
+        <attribute name="actionType" optional="YES" attributeType="String"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="activityLogs" inverseEntity="UserProfile"/>
+    </entity>
+    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPremiumUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="profilePictureURL" optional="YES" attributeType="String"/>
+        <relationship name="activityLogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserActivityLog" inverseName="user" inverseEntity="UserActivityLog"/>
+    </entity>
+</model>
