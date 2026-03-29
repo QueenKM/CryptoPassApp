@@ -1,73 +1,68 @@
 # CryptoPassApp
 
-CryptoPassApp is a cross-platform password manager concept targeting both iOS and macOS, with shared application modules and a companion backend service.
+CryptoPassApp is a SwiftUI password manager project for Apple platforms, focused on secure password storage workflows, biometric authentication, and a clean application structure for iOS and macOS.
 
 ## Overview
 
-This repository captures the structure of a broader password-management system that includes:
+This repository now includes a public-safe source snapshot of the real project.
 
-- iOS application modules
-- macOS application modules
-- shared app modules
-- backend/server components
-- build, deployment, and testing assets
+The current visible code shows work across:
 
-From the project archive structure, the app is organized around Apple platform clients plus shared modules for common functionality such as encryption, networking, and utilities.
+- SwiftUI screens for login, registration, navigation, and password browsing
+- biometric authentication using `LocalAuthentication`
+- password domain models and view models
+- encryption using `CryptoKit`
+- Firebase-based authentication and password sync integration
+- unit and UI test coverage
 
-## Architecture Snapshot
+## Source Snapshot
 
-The archived project is organized into the following areas:
+The repository currently exposes a curated public subset of the project:
 
 ```text
 CryptoPass/
-├── App/
-│   ├── iOS/
-│   ├── macOS/
-│   └── Shared/
-├── Server/
-├── Documentation/
-├── External/
-└── Tools/
+├── CryptoPassApp.swift
+├── CryptoPass.entitlements
+├── Models/PlainModels/
+├── Services/
+│   ├── Cloud/
+│   ├── Core/
+│   └── Security/
+├── ViewModels/
+└── Views/
+
+CryptoPassTests/
+CryptoPassUITests/
 ```
 
-This suggests a multi-part setup with:
+## Features Visible In The Source
 
-- platform-specific app layers for iOS and macOS
-- shared modules for reusable logic
-- a backend service layer
-- supporting tooling for CI/CD, testing, and deployment
+- email/password registration and login flows
+- biometric unlock flow from the app landing screen
+- password list UI with category-based data
+- app-level authentication state handling
+- encryption helper backed by `CryptoKit` and Keychain storage
+- Firestore integration for saving and retrieving password records
+- view model tests and UI flow tests
 
-## Current Repository Status
+## Security Notes
 
-This repository currently stores the project as an archived snapshot (`CryptoPass.zip`) rather than as a fully unpacked source tree.
+Private Firebase configuration is intentionally not committed to the public repository.
 
-That means the project is best understood today as a portfolio and architecture snapshot rather than a ready-to-run open-source repository.
+Use the included `CryptoPass/GoogleService-Info.example.plist` as a template and create your own local `GoogleService-Info.plist` when configuring Firebase.
 
-## Why This Matters
+## Repository Cleanup Status
 
-Even in its current form, CryptoPassApp shows work on:
+This repository originally contained an uploaded archive instead of visible source files. That has now been partially corrected by publishing representative source code directly into the repo.
 
-- cross-platform application thinking
-- password management workflows
-- shared-module architecture
-- security-oriented product design
-- support for backend and deployment structure
+The next cleanup step is to continue replacing archive-first content with the remaining safe source files and to remove outdated placeholder artifacts from the repository history.
 
-## Planned Improvements
+## Next Improvements
 
-The next step for this repository is to convert the archived project into a standard source-controlled layout so that code, documentation, and build scripts are directly visible in GitHub.
-
-Recommended cleanup includes:
-
-- unpacking the source into regular tracked folders
-- removing macOS archive artifacts such as `.DS_Store` and `__MACOSX`
-- documenting the build and run steps
-- adding screenshots or short demos
-- clarifying the exact platform and backend stack
-
-## Portfolio Notes
-
-CryptoPassApp is included here as a security- and product-oriented application concept with multi-platform scope. As the repository is cleaned up, it can become a much stronger portfolio piece by making the source tree, setup process, and technical decisions visible directly in GitHub.
+- publish the remaining safe project files in the same clean structure
+- add screenshots of the app UI
+- document local setup and Firebase configuration steps
+- remove outdated archive-only artifacts once the full source import is complete
 
 ## License
 
