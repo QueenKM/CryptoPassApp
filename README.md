@@ -16,6 +16,12 @@ The current visible code shows work across:
 - unit and UI test coverage
 - Xcode project metadata with package dependencies
 
+## Current Status
+
+CryptoPassApp is currently presented as a portfolio-ready source snapshot.
+
+The repository contains real project code, structure, and configuration metadata, but the original local build environment is not currently available. Because of that, this repository should be understood as a well-documented engineering and architecture sample rather than a fully maintained production-ready build at this moment.
+
 ## Tech Stack
 
 - Swift
