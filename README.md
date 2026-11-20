@@ -1,5 +1,7 @@
 # CryptoPassApp
 
+For the dedicated macOS portfolio version, see [CryptoPass-MacOS](https://github.com/QueenKM/CryptoPass-MacOS).
+
 CryptoPassApp is a SwiftUI password manager project for Apple platforms, focused on secure password storage workflows, biometric authentication, Core Data persistence, and a clean public project structure for portfolio presentation.
 
 ### Features :
